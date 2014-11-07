@@ -12,6 +12,11 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 test:
 	./main DollarToEuro 10000
+	./main EuroToDollar 10000
+	./main CelisiusToFahrenheit 10000
+	./main FahrenheitToCelsius 10000
+	./main KilometersToYards 10000
+	./main YardsToKilometers 10000
 
 clean:
 	rm main *.o
