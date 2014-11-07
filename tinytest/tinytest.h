@@ -1,4 +1,5 @@
-/*! 
+//tinytest.h
+/* 
     Simple unit testing for c/c++
     Copyright Cosmin Cremarenco.
     Licence: Apache 2.0
@@ -29,6 +30,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 typedef int (*TinyTestFunc)(void);
 
@@ -54,22 +56,32 @@ typedef struct TinyTestRegistryStruct
 
 #ifndef TINYTEST_NOTESTING
 
+#define EPSILON 0.00001 // Eigenes Macro für Equal
+#define TINYTEST_EQUAL_EPSILON(expected, actual)                       \
+  if ( fabs((expected)-(actual)) > EPSILON)                                         \
+  {                                                                     \
+    printf("%s:%d expected %s, actual: %f\n",                           \
+           __FILE__, __LINE__, #expected, actual);                     \
+                                                 \
+    return 0;                                                           \
+  }
+
 #define TINYTEST_EQUAL_MSG(expected, actual, msg)                       \
   if ( (expected) != (actual) )                                         \
   {                                                                     \
-    printf("%s:%d expected %s, actual: %f\n",                           \
-           __FILE__, __LINE__, #expected, actual);                      \
+    printf("%s:%d expected %s, actual: %s\n",                           \
+           __FILE__, __LINE__, #expected, #actual);                     \
     if ( msg ) printf(msg);                                             \
     return 0;                                                           \
   }
 
 #define TINYTEST_EQUAL(expected, actual)                                \
-  TINYTEST_EQUAL_MSG(expected, actual, NULL)
+  TINYTEST_EQUAL_MSG(expected, actual, " ") // NULL entfernt wegen   warning: implicit conversion of NULL constant to 'bool' [-Wnull-conversion]
 
 #define TINYTEST_STR_EQUAL_MSG(expected, actual, msg)                   \
   if ( strcmp((expected), (actual)) )                                   \
   {                                                                     \
-    printf("%s:%d expected \"%s\", actual: \"%f\"\n",                   \
+    printf("%s:%d expected \"%s\", actual: \"%s\"\n",                   \
            __FILE__, __LINE__, expected, actual);                       \
     if ( msg ) printf(msg);                                             \
     return 0;                                                           \
@@ -201,4 +213,3 @@ void Suite##suiteName(TinyTestRegistry* registry)                       \
 #endif // TINYTEST_NOTESTING
 
 #endif
-

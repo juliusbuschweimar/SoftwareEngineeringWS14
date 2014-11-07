@@ -10,7 +10,11 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 %.o: %.cpp $$(wildcard $$*.hpp)
 	g++ -Wall -c -o $@ $<
 
-test:
+test: tinytest/test.o converter.o dollartoeuroconverter.o eurotodollarconverter.o kilometertoyardsconverter.o fahrenheittocelsiusconverter.o yardstokilometersconverter.o celsiustofahrenheitconverter.o
+	#g++ -Wall -c test/test.cpp -o test/test.o
+	g++ -o tinytest/test $^
+	./tinytest/test
+buildtest:
 	./main DollarToEuro 10000
 	./main EuroToDollar 10000
 	./main CelisiusToFahrenheit 10000
@@ -19,5 +23,5 @@ test:
 	./main YardsToKilometers 10000
 
 clean:
-	rm main *.o
+	rm main *.o tinytest/test tinytest/*.o
 

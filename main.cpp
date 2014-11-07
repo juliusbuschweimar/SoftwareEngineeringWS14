@@ -12,9 +12,9 @@ int main(int argc, char* argv[]) {
   } 
   if (argc>1) {
     std::string conversion = argv[1];
-    if (argc=2){
+    if (argc>2){
       double value = atof(argv[2]);//http://www.cplusplus.com/reference/cstdlib/atof/
-           std:cout<< "Conversion: "<<conversion<<std::endl;
+           std::cout<< "Conversion: "<<conversion<<std::endl;
       if (conversion=="DollarToEuro"){
         DollarToEuroConverter* myConverter = new DollarToEuroConverter();
         double euros = myConverter->convert(value);
