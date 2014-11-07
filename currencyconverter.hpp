@@ -5,7 +5,7 @@
 class CurrencyConverter : public converter 
 {
   public:
-    virtual double convert(double Money) = 0;
+    virtual double convert(double currency) = 0;
 };
 
-#endif	/* CURRENCYCONVERTER_HPP */
+#endif	// CURRENCYCONVERTER_HPP 

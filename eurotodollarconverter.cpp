@@ -9,7 +9,7 @@ EuroToDollarConverter::EuroToDollarConverter()
 *Out: dollar value of input euro as of 19.10.14
 */
 double EuroToDollarConverter::convert(double inputEuros){
-	return inputEuros *1.27838; 
+	return inputEuros *1.27838;// Quelle: google.com
 }
 
 std::string EuroToDollarConverter::toString() const{
