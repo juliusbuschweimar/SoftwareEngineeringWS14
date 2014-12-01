@@ -2,7 +2,7 @@
 #define	CURRENCYCONVERTER_HPP
 #include "converter.hpp"
 
-class CurrencyConverter : public converter 
+class CurrencyConverter : public Converter 
 {
   public:
     virtual double convert(double currency) = 0;

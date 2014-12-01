@@ -1,5 +1,5 @@
 #include "converter.hpp"
 
-converter::converter()
-{
+Converter* Converter::create(){
+    return nullptr;
 }

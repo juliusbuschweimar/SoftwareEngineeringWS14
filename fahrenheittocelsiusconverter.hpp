@@ -10,6 +10,7 @@ public:
 	double convert(double inFahrenheit);
 	std::string toString() const;
 	void print() const;
+	static Converter* create();
 };
 
 #endif // FAHRENHEITTOCELSIUSCONVERTER_H

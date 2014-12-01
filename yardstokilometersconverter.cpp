@@ -20,3 +20,6 @@ std::string YardsToKilometersConverter::toString() const{
 void YardsToKilometersConverter::print() const{
 	std::cout << this->toString();
 }
+Converter* YardsToKilometersConverter::create() {
+    return new YardsToKilometersConverter();
+}

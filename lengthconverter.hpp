@@ -2,7 +2,7 @@
 #define	LENGTHCONVERTER_HPP
 #include "converter.hpp"
 
-class LengthConverter : public converter 
+class LengthConverter : public Converter 
 {
   public:
     virtual double convert(double length) = 0;

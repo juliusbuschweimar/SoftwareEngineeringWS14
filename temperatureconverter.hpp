@@ -2,7 +2,7 @@
 #define	TEMPERATURECONVERTER_HPP
 #include "converter.hpp"
 
-class TemperatureConverter : public converter 
+class TemperatureConverter : public Converter 
 {
   public:
     virtual double convert(double temperature) = 0;

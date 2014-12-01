@@ -10,6 +10,7 @@ public:
 	double convert(double inputYards);
 	std::string toString() const;
 	void print() const;
+	static Converter* create();
 };
 
 #endif // YARDSTOKILOMETERSCONVERTER_H

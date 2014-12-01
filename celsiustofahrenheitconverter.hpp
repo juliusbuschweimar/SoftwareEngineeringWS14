@@ -10,6 +10,7 @@ public:
 	double convert(double inCelsius);
 	std::string toString() const;
 	void print() const;
+	static Converter* create();
 };
 
 #endif // CELSIUSTOFAHRENHEITCONVERTER_H

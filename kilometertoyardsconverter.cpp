@@ -20,3 +20,7 @@ std::string KilometersToYardsConverter::toString() const{
 void KilometersToYardsConverter::print() const{
 	std::cout << this->toString();
 }
+
+Converter* KilometersToYardsConverter::create() {
+    return new KilometersToYardsConverter();
+}

@@ -10,6 +10,7 @@ public:
 	double convert(double inputKilometers);
 	std::string toString() const;
 	void print() const;
+	static Converter* create();
 };
 
 #endif // KILOMETERSTOYARDSCONVERTER_H

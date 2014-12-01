@@ -19,3 +19,6 @@ std::string FahrenheitToCelsiusConverter::toString() const{
 void FahrenheitToCelsiusConverter::print() const{
 	std::cout << this->toString();
 }
+Converter* FahrenheitToCelsiusConverter::create() {
+    return new FahrenheitToCelsiusConverter();
+}
