@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <string>
+#include <algorithm>
+#include <iostream>
+#include "factory.hpp"
 #include "dollartoeuroconverter.hpp"
 #include "eurotodollarconverter.hpp"
 #include "fahrenheittocelsiusconverter.hpp"

@@ -5,7 +5,7 @@
 class TemperatureConverter : public Converter 
 {
   public:
-    virtual double convert(double temperature) = 0;
+    virtual double convert(double temperature) const = 0;
 };
 
 #endif	/* TEMPERATURECONVERTER_HPP */

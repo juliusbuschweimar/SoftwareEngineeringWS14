@@ -2,12 +2,12 @@
 #define FAHRENHEITTOCELSIUSCONVERTER_H
 
 #include "temperatureconverter.hpp"
-
+#include "converter.hpp"
 class FahrenheitToCelsiusConverter: public TemperatureConverter
 {
 public:
-	FahrenheitToCelsiusConverter();
-	double convert(double inFahrenheit);
+	FahrenheitToCelsiusConverter(){};
+	double convert(double inFahrenheit) const;
 	std::string toString() const;
 	void print() const;
 	static Converter* create();

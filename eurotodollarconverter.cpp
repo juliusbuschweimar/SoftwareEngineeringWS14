@@ -1,14 +1,11 @@
-#include "EuroToDollarConverter.hpp"
+#include "eurotodollarconverter.hpp"
 #include <string>
 
-EuroToDollarConverter::EuroToDollarConverter()
-{
-}
 
 /*In: double value of euro
 *Out: dollar value of input euro as of 19.10.14
 */
-double EuroToDollarConverter::convert(double inputEuros){
+double EuroToDollarConverter::convert(double inputEuros) const{
 	return inputEuros *1.27838;// Quelle: google.com
 }
 

@@ -3,31 +3,31 @@
 ConverterFactory* ConverterFactory::instance = NULL;
 
 ConverterFactory::ConverterFactory(): 
-factory_map{{"EuroToDollar", EuroToDollarConverter::create},
-        	{"DollarToEuro", DollarToEuroConverter::create},
-        	{"KilometerToYards", KilometersToYardsConverter::create},
-        	{"YardsToKilometer", YardsToKilometersConverter::create},  
-        	{"FahrenheitToCelsius", FahrenheitToCelsiusConverter::create},
-        	{"CelsiusToFahrenheit", CelsiusToFahrenheitConverter::create}}
+factory_map{{"EuroToDollar", &EuroToDollarConverter::create},
+        	{"DollarToEuro", &DollarToEuroConverter::create},
+        	{"KilometersToYards", &KilometersToYardsConverter::create},
+        	{"YardsToKilometers", &YardsToKilometersConverter::create},  
+        	{"FahrenheitToCelsius", &FahrenheitToCelsiusConverter::create},
+        	{"CelsiusToFahrenheit", &CelsiusToFahrenheitConverter::create}}
 			{}
 
 
 
-Converter* ConverterFactory::create(const std::string& converterName) const {
+Converter* ConverterFactory::create(const std::string& Name) const {
     
-	auto i = factory_map.find(converterName);
+	auto i = factory_map.find(Name);
     if (i != factory_map.end())
     {
-    return factory_map.at(converterName)();
+    return factory_map.at(Name)();
     }else
     {
     printf("Error: Function is not available.\n");
     return NULL;
     }
-    if (factory_map.find(converterName) == factory_map.end())
+    if (factory_map.find(Name) == factory_map.end())
         return nullptr;
     else
-        return factory_map.at(converterName)();
+        return factory_map.at(Name)();
 }
 
 ConverterFactory* ConverterFactory::_instance() {

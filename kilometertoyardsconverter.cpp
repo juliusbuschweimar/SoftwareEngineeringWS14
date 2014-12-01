@@ -2,14 +2,12 @@
 
 #include <string>
 
-KilometersToYardsConverter::KilometersToYardsConverter()
-{
-}
+
 
 /*In: value of Kilometers
 *Out: value of Yards
 */
-double KilometersToYardsConverter::convert(double inputKilometers){
+double KilometersToYardsConverter::convert(double inputKilometers) const{
 	return inputKilometers * 1093.6133; //Quelle: google.com
 }
 

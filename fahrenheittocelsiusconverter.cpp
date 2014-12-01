@@ -1,14 +1,13 @@
-#include "FahrenheitToCelsiusConverter.hpp"
+#include "fahrenheittocelsiusconverter.hpp"
 
 #include <string>
 
-FahrenheitToCelsiusConverter::FahrenheitToCelsiusConverter(){
-}
+
 
 /*In: value in Fahrenheit
 *Out: value in Celsius
 */
-double FahrenheitToCelsiusConverter::convert(double inputFahrenheit){
+double FahrenheitToCelsiusConverter::convert(double inputFahrenheit)const{
 	return (inputFahrenheit - 32) * 5/9; // Quelle: google.com
 }
 
