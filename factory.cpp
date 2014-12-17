@@ -24,11 +24,11 @@ Converter* ConverterFactory::create(const std::string& Name) const {
     printf("Error: Function is not available.\n");
     return NULL;
     }
-    if (factory_map.find(Name) == factory_map.end())
+    /*if (factory_map.find(Name) == factory_map.end())
         return nullptr;
     else
-        return factory_map.at(Name)();
-}
+        return factory_map.at(Name)();*/
+    }
 
 ConverterFactory* ConverterFactory::_instance() {
     if (!instance){

@@ -8,7 +8,7 @@
 *Out: value in Celsius
 */
 double FahrenheitToCelsiusConverter::convert(double inputFahrenheit)const{
-	return (inputFahrenheit - 32) * 5/9; // Quelle: google.com
+	return Converter::convert(inputFahrenheit - 32) * 5/9; // Quelle: google.com
 }
 
 std::string FahrenheitToCelsiusConverter::toString() const{
@@ -19,5 +19,14 @@ void FahrenheitToCelsiusConverter::print() const{
 	std::cout << this->toString();
 }
 Converter* FahrenheitToCelsiusConverter::create() {
-    return new FahrenheitToCelsiusConverter();
+    return new FahrenheitToCelsiusConverter(nullptr);
+}
+
+Converter* FahrenheitToCelsiusConverter::create(Converter* converter) {
+   
+    return new FahrenheitToCelsiusConverter( converter);
+}
+
+FahrenheitToCelsiusConverter::FahrenheitToCelsiusConverter(Converter* base) {
+    m_base = base;
 }

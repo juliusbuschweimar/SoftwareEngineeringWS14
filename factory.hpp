@@ -1,4 +1,4 @@
-#ifndef FACTORY_HPP
+ #ifndef FACTORY_HPP
 #define	FACTORY_HPP
 
 #include "dollartoeuroconverter.hpp"
@@ -7,6 +7,7 @@
 #include "celsiustofahrenheitconverter.hpp"
 #include "kilometertoyardsconverter.hpp"
 #include "yardstokilometersconverter.hpp"
+#include "inverse.hpp"
 #include "converter.hpp"
 #include <map>
 #include <string>

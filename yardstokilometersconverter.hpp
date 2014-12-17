@@ -9,10 +9,12 @@ class YardsToKilometersConverter : public LengthConverter
 {
 public:
 	YardsToKilometersConverter(){};
+	YardsToKilometersConverter(Converter* base);
 	double convert(double inYards) const;
 	std::string toString() const;
 	void print() const;
 	static Converter* create();
+	static Converter* create(Converter* converter);
 };
 
 #endif // YARDSTOKILOMETERSCONVERTER_H

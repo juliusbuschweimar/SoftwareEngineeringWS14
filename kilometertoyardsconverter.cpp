@@ -20,5 +20,13 @@ void KilometersToYardsConverter::print() const{
 }
 
 Converter* KilometersToYardsConverter::create() {
-    return new KilometersToYardsConverter();
+    return new KilometersToYardsConverter(nullptr);
+}
+
+Converter* KilometersToYardsConverter::create(Converter* converter) {
+    return new KilometersToYardsConverter(converter);
+}
+
+KilometersToYardsConverter::KilometersToYardsConverter(Converter* base) {
+    m_base = base;
 }

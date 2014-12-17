@@ -9,7 +9,7 @@
 *Out: value of Kilometers
 */
 double YardsToKilometersConverter::convert(double inputYards) const{
-	return inputYards * 0.0009144; //Quelle: google.com
+	return Converter::convert(inputYards)* 0.0009144; //Quelle: google.com
 }
 
 std::string YardsToKilometersConverter::toString() const{
@@ -20,5 +20,13 @@ void YardsToKilometersConverter::print() const{
 	std::cout << this->toString();
 }
 Converter* YardsToKilometersConverter::create() {
-    return new YardsToKilometersConverter();
+    return new YardsToKilometersConverter(NULL);
+}
+
+Converter* YardsToKilometersConverter::create(Converter* converter) {
+    return new YardsToKilometersConverter(converter);
+}
+
+YardsToKilometersConverter::YardsToKilometersConverter(Converter* base) {
+    m_base = base;
 }
